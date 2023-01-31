@@ -198,12 +198,12 @@ def main():
 			collapse_name_ops=False,
 			use_pointer_tokens=True,
 			raw_graph=False,
-			padding=True, truncation=True,
+			padding=max_length, truncation=True,
 		)
 	tokenizer_text = AutoTokenizer.from_pretrained(
 			model_args.model_name_or_path_text,
 			cache_dir=model_args.cache_dir,
-			padding=True, truncation=True,
+			padding=max_length, truncation=True,
 			# Default fast tokenizer is buggy on CaseHOLD task, switch to legacy tokenizer
 			use_fast=True,
 		)
