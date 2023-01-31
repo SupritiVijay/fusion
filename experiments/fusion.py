@@ -198,7 +198,7 @@ def main():
 			collapse_name_ops=False,
 			use_pointer_tokens=True,
 			raw_graph=False,
-			padding='max_length', truncation=True,
+			padding='max_length', max_length=1024, truncation=True,
 		)
 	tokenizer_text = AutoTokenizer.from_pretrained(
 			model_args.model_name_or_path_text,
