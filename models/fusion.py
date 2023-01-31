@@ -1,3 +1,4 @@
+import torch.nn.functional as F
 from cgitb import text
 import torch
 from torch import nn
@@ -44,7 +45,9 @@ class Fusion(nn.Module):
 
         amr_input_ids = amr_input_ids.view(-1, amr_input_ids.size(-1)) if amr_input_ids is not None else None
         amr_attention_mask = amr_attention_mask.view(-1, amr_attention_mask.size(-1)) if amr_attention_mask is not None else None
-
+        amr_input_ids = F.pad(input=amr_input_ids , pad=(0, 1024-amr_input_ids.shape[1], 0, 0), mode='constant', value=0)
+        amr_attention_mask= F.pad(input=amr_attention_mask, pad=(0, 1024-amr_input_ids.shape[1], 0, 0), mode='constant', value=0)
+        
 
         text_emb = self.text_model(
             text_input_ids, 
