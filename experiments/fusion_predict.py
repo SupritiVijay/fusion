@@ -293,7 +293,7 @@ def main():
 
 	# Training
 	if training_args.do_train:
-		trainer.train(model_args.checkpoint) 
+		trainer.train(resume_from_checkpoint: False) 
 		trainer.save_model()
 
 	# Evaluation on eval_dataset
