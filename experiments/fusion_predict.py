@@ -272,7 +272,7 @@ def main():
 		macro_f1 = f1_score(y_true=p.label_ids, y_pred=preds, average='macro', zero_division=0)
 		micro_f1 = f1_score(y_true=p.label_ids, y_pred=preds, average='micro', zero_division=0)
 		accuracy = accuracy_score(p.label_ids, preds)
-		return {'macro-f1': macro_f1, 'micro-f1': micro_f1, 'accuracy': accuracy}
+		return {'macro-f1': macro_f1, 'eval_macro-f1': macro_f1, 'micro-f1': micro_f1, 'eval_micro-f1': micro_f1, 'accuracy': accuracy, 'eval_accuracy': accuracy}
 
 	collate_fn = CustomDataCollatorWithPadding(
 		tokenizer_amr,
