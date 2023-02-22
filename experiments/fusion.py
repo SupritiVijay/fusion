@@ -40,7 +40,7 @@ from dataloader_fusion import Split
 from sklearn.metrics import f1_score
 directory = os.getcwd()
 print(directory)
-from .models.fusion import Fusion
+from models.fusion import Fusion
 from spring.spring_amr.tokenization_bart import PENMANBartTokenizer
 
 logger = logging.getLogger(__name__)
