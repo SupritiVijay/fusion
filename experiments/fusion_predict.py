@@ -214,8 +214,8 @@ def main():
 		classifier_dropout = 0.1,
 		amr_eos_token_id = amr_config.eos_token_id
 	)
-	model.load_state_dict(torch.load('./fusion-case-hold/pytorch_model.bin'))
-
+	model.load_state_dict(torch.load('./fusion-logiqa/pytorch_model.bin'))
+	
 	train_dataset = None
 	eval_dataset = None
 
